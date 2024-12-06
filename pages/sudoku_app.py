@@ -35,6 +35,7 @@ def board_to_dataframe(board):
 
 # Streamlit app interface
 def main():
+    st.set_page_config(page_title="Sudoku solver", page_icon=":guardsman:", layout="wide")
     st.title("Sudoku Solver with Editable Table")
 
     st.write("""
@@ -68,6 +69,9 @@ def main():
             st.table(solved_board_df)  # Display the solved board
         else:
             st.error("No solution found! Please check your puzzle.")
+
+    # Link back to the App Store
+    st.page_link(page="app_store.py", label="Back to App Store")
 
 # Run the Streamlit app
 if __name__ == '__main__':
